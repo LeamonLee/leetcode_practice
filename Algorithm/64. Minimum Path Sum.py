@@ -18,14 +18,14 @@ class Solution:
     def minPathSum(self, grid: List[List[int]]) -> int:
         m, n = len(grid), len(grid[0])
 
-        '''由上往下，由左往右去計算path sum '''
+        '''由上往下，由左往右去計算minimum path sum，選擇最短路徑 '''
         
-        # Iterate Columns
+        # Iterate Columns (First Row)
         for c in range(1, n):   # 注意從1開始
             # First row
             grid[0][c] = grid[0][c] + grid[0][c-1]  # First row(最上面的)，先把左右總和加起來
         
-        # Iterate Rows
+        # Iterate Rows  (First Column)
         for r in range(1, m):   # 注意從1開始
             # First Col
             grid[r][0] = grid[r][0] + grid[r-1][0]  # First column(最左邊的)，先把上下總和加起來

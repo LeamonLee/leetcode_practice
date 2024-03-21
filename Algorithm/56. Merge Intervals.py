@@ -28,7 +28,7 @@ class Solution:
         intervals = sorted(intervals, key=lambda item: item[0]) # 先用第1個element排序
 
         curr = intervals[0]
-        for i in range(1, len(intervals)):  # 從1開始
+        for i in range(1, len(intervals)):  # 從1開始，因為0已經先被拿來當作curr了
             # 拿當前的第2個和下一個的第1個比較
             if curr[1] < intervals[i][0]:   # 如果比較小代表不用融合
                 res.append(curr)

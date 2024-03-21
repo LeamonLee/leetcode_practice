@@ -17,9 +17,13 @@ Explanation: Your function can return either index number 1 where the peak eleme
 
 class Solution:
     def findPeakElement(self, nums: List[int]) -> int:
+        '''
+        回傳peak element的array index
+        使用Binary Search(二分搜尋法)
+        '''
         l = 0
         r=len(nums)-1
-        while l+1<r:
+        while l+1<r:                    # 因為要找mid，所以會是l+1<r
             mid = l + (r-l)//2
             '''
             拿到mid點後會有兩種情況:

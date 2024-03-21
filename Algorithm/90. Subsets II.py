@@ -12,21 +12,22 @@ Example 2:
 Input: nums = [0]
 Output: [[],[0]]
 
-和78題做比較
+和39,40,46,47,78題做比較
 '''
 class Solution:
     def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
         '''
         這一題給定的nums有重複的element，但題目沒有說已經排序好，
         所以第一步要先排序，因為需要前後element比較來排除重複
-        subset [1,2]和[2,1]是一樣的
+        subset: [1,2]和[2,1]是一樣的
         '''
         res=[]
 
-        nums.sort() # 這一步非常重要，因為需要前後element比較來排除重複
+        nums.sort() # 這一步非常重要，因為需要前後element相互比較來排除重複
         def backtrack(startIdx, temp):
             '''
             這題關鍵就是 backtracking沒有任何的停止條件
+            且空陣列也算結果之一。且[1,2]和[2,1]是一樣的
             '''
             res.append(temp.copy())
 
@@ -47,7 +48,7 @@ class Solution:
                 # if i > 0 and nums[i] == nums[i-1]: continue           # (X)
 
                 temp.append(nums[i])
-                backtrack(i+1, temp)
+                backtrack(i+1, temp)        # startIdx還是要往上+1
                 temp.pop()
         
         backtrack(0, [])

@@ -41,7 +41,7 @@ class Solution:
         '''
 
         ''' Step1 從後往前遍歷，找到第一個降序index '''
-        i = len(nums)-2                         # 從倒數第二個開始
+        i = len(nums)-2                         # 從倒數第二個開始，因為下一行while條件用i和i+1比較
         while i>=0 and nums[i] >= nums[i+1]:    # 是 "大於等於" ，如果只有大於會失敗
             i-=1
         
@@ -50,7 +50,7 @@ class Solution:
             return
         
         ''' Step2 從後往前遍歷，找到第一個比nums[i]大的index '''
-        j = len(nums) - 1
+        j = len(nums) - 1                       # 這邊從最後一個element開始
         while j>=0 and nums[j] <= nums[i]:      # 是 "小於等於" ，如果只有小於會失敗
             j-=1
         

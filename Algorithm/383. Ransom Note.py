@@ -13,10 +13,17 @@ Output: false
 Example 3:
 Input: ransomNote = "aa", magazine = "aab"
 Output: true
+
+可與242, 387比較
 '''
 
 class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        '''
+        初始化一個26長度的array，因為英文字母a~z
+        接著magazine出現過的字符就+1，ransomNote出現過的字符就減1
+        最後再遍歷一次array，如果有發現count<0的情況，代表magazine沒有ransomeNote需要的字符
+        '''
         lstChaCount = [0 for _ in range(26)]
 
         for c in magazine:

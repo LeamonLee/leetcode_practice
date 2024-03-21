@@ -14,8 +14,8 @@ Output: 4193
 class Solution:
     def myAtoi(self, s: str) -> int:
         index = 0
-        MAX_INT = (1 << 31) - 1
-        MIN_INT = -1 * (1 << 31)
+        MAX_INT = (1 << 31) - 1     # or 2**31 -1
+        MIN_INT = -1 * (1 << 31)    # or -2**31
 
         # Remove whitespace
         while index < len(s) and s[index] == ' ':

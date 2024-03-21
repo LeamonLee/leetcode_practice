@@ -25,8 +25,8 @@ class Solution:
         if not needle: return 0 # 如果needle為空字串，就直接回傳0
 
         '''
-        從haystack第一個字符開始跑for loop
-        i是haystack的起始字符
+        - 從haystack第一個字符開始跑for loop
+        - i是haystack的起始字符
         '''
         for i in range(lengthHaystack):
             if haystack[i] == needle[0]:    # 先比較needle的第一個字元

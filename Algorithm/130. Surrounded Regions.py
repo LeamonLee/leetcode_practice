@@ -21,14 +21,24 @@ class Solution:
         """
         Do not return anything, modify board in-place instead.
         """
+
+        '''
+        解題思路: 
+        1. 先從四個邊(First Row/Column, Last Row/Column)判斷是否有O的，有的就繼續往裡面跑，並標記為^
+        2. 最後重新遍歷整個board，如果是^就變回O，如果是O就變成X
+        '''
+
         ROWS = len(board)
         COLS = len(board[0])
 
         def helper(r,c):
+            # 如果越界了，或是走到X，就return
             if r<0 or r>=ROWS or\
                 c<0 or c>=COLS or\
                 board[r][c] != 'O':
                 return
+            
+            # 會走到這，代表這個位子是O，可以變成^
             board[r][c] = '^'
             helper(r-1,c)
             helper(r,c-1)

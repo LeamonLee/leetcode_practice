@@ -25,9 +25,9 @@ class Solution:
 
              1,2,3,4
 
-        解題思路: 用right和mid做比較，如果mid比right大，說明mid目前在左半邊，所以要把left指針換成mid現在位置
+        解題思路: 用right和mid做比較，如果mid比right大，說明mid目前在左半邊，最小值會出現在右半邊，所以要把left指針換成mid現在位置
         '''
-        while l+1<r:
+        while l+1<r:                # 因為要找mid，所以是l+1<r
             mid = (l+r)//2          # 這題這兩種求mid的寫法都可以
             # mid = l + (r-l)//2    # 這題這兩種求mid的寫法都可以
             if nums[mid] > nums[r]:

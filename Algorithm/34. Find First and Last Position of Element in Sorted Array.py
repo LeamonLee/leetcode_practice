@@ -24,6 +24,7 @@ class Solution:
         if not nums: return [-1, -1]
 
         '''
+        這題給定的nums已經從小大到排序好
         變形的二分搜索法
         這一題就是要找到一個array最左邊和最右邊都等於target的index
         '''
@@ -31,17 +32,18 @@ class Solution:
         def findLeft():
             l = 0
             r = len(nums) - 1
-            while l + 1 < r:
+            while l + 1 < r:    # 因為要找mid，所以是l+1<r
                 mid = l + (r-l) // 2
 
-                # 這邊的判斷式是關鍵
-                # 因為是找最左邊的index，
+                # 這邊的判斷式是關鍵 要包含=，且是<=
+                # 因為是找 "最左邊" 的index，
                 # 所以即使mid已經等於target了，還是要將mid賦值給right，因為要盡量往最左邊去找
                 if target <= nums[mid]:
                     r = mid
                 else:
                     l = mid
 
+            ''' 先看l再看r，和找右邊相反，因為是要找左邊的index '''
             if nums[l] == target:
                 return l
             elif nums[r] == target:
@@ -53,15 +55,18 @@ class Solution:
             l = 0
             r = len(nums) - 1
             
-            while l + 1 < r:
+            while l + 1 < r:        # 因為要找mid，所以是l+1<r
                 mid = l + (r-l)//2
 
-                # 這邊的判斷式是關鍵
+                # 這邊的判斷式是關鍵 要包含=，且是>=
+                # 因為是找 "最右邊" 的index，
+                # 所以即使mid已經等於target了，還是要將mid賦值給left，因為要盡量往最右邊去找
                 if target >= nums[mid]:
                     l = mid
                 else:
                     r = mid
             
+            ''' 先看r再看l，和找左邊相反，因為是要找右邊的index '''
             if nums[r] == target:
                 return r
             elif nums[l] == target:
@@ -70,6 +75,7 @@ class Solution:
                 return -1
         
         firstIndex = findLeft()
+        ''' 如果左邊找不到，右邊也不用找了 '''
         if firstIndex == -1:
             return [-1, -1]
         

@@ -19,7 +19,8 @@ class Solution:
         if s == t : return True
 
         '''
-        思路: 使用two pointers
+        思路: 使用two pointers，直接遍歷t的長度，同時一路檢查s是否有等於t的字符，
+        如果有的話就把matchCount指針加1，並檢查是否到s的長度了，如果是的話代表s是t的subsequence。
         s:  a           x           c
             matchCount
         t:  a           h           b           g           d           c

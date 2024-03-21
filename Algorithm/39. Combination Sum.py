@@ -22,14 +22,14 @@ A solution set is:
 Constraints:
     All elements of candidates are distinct.
 
+與40,46,47,78,90相比
 '''
 
 class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         '''
-        candidate本身沒有重複
+        candidate本身沒有重複數字
         但candidates裡面的數字可以重複使用，來達到target
-        但res裡面的組合不能重複
         '''
 
         ''' Backtracking '''

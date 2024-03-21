@@ -30,6 +30,7 @@ Thus, the result should be [1,0].
 
 class Solution:
     def plusOne(self, digits: List[int]) -> List[int]:
+        ''' 從最後一位開始 '''
         i = len(digits) - 1
 
         while i>=0:

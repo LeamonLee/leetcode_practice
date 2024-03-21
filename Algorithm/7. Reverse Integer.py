@@ -35,6 +35,7 @@ class Solution:
             # If reversing x causes the value to go outside the signed 32-bit integer range
             ''' 
             本題關鍵!
+            如果newRes//10不等於res，代表有overflow
             Ex: x=123456789, reverse後變成
             '''
             if newRes // 10 != res or \

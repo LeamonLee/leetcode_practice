@@ -13,6 +13,8 @@ Output: 2
 Example 3:
 Input: s = "aabb"
 Output: -1
+
+可與242, 383比較
 '''
 
 class Solution:

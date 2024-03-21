@@ -15,6 +15,8 @@ Constraints:
     1 <= nums.length <= 6
     -10 <= nums[i] <= 10
     All the integers of nums are unique.
+
+與39,40,47相比
 '''
 
 from typing import List

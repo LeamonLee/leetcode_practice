@@ -1,5 +1,6 @@
 '''
-Given the heads of two singly linked-lists headA and headB, return the node at which the two lists intersect. If the two linked lists have no intersection at all, return null.
+Given the heads of two singly linked-lists headA and headB, return the node at which the two lists intersect. 
+If the two linked lists have no intersection at all, return null.
 For example, the following two linked lists begin to intersect at node c1:
 '''
 
@@ -16,7 +17,7 @@ class Solution:
         a = headA
         b = headB
 
-        # 如果兩個node有交叉(intersection)，則x+z+y = y+z+x
+        # 如果兩個Linked List有交叉(intersection)，則x+z+y = y+z+x
         # 也就是說，先走headA，走到Null後再換走nodeB。nodeB也一樣
         while a != b:
             a = headB if not a else a.next

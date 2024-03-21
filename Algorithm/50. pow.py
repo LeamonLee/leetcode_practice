@@ -24,7 +24,7 @@ class Solution:
             if x == 0: return 0
             if n == 0: return 1
 
-            # 如果n是奇數的話，只有這樣寫會少乘一次
+            # 如果n是奇數的話，只有寫helper(x*x, n//2)的話就回傳res，會少乘一次
             # 因此return前要先判斷如果n是奇數的話還要再多乘一次x
             # Ex: 
             # 偶數: x^2 * x^2 = x^4

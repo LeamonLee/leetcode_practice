@@ -28,9 +28,9 @@ A solution set is:
 class Solution:
     def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
         '''
-        這一題和上一題不一樣，
+        這題和上一題不一樣，
         且candidate本身可能含有重複數字
-        candidates裡面的數字不行重複使用
+        但candidates裡面的數字不行重複使用
         '''
 
         ''' Backtracking '''

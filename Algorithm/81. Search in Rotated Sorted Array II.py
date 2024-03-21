@@ -25,7 +25,7 @@ class Solution:
         l=0
         r=len(nums)-1
 
-        while l+1<r:
+        while l+1<r:    # 因為要找mid，所以是l+1<r
             mid = l + (r-l)//2
             if nums[mid]==target: return True
 

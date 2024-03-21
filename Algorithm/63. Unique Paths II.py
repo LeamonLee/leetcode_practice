@@ -40,7 +40,7 @@ class Solution:
             if obstacleGrid[r][0] == 1: break   # 一旦遇到障礙物，後面的都到達不了，所以直接Break
             dp[r][0] = 1
 
-        ''' 一樣由左往右，Column by column看 '''
+        ''' 從(1,1)開始一樣由左往右，Column by column看 '''
         for c in range(1,n):
             for r in range(1,m):
                 if obstacleGrid[r][c] == 1: continue

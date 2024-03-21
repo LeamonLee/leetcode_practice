@@ -21,17 +21,20 @@ class Solution:
         ''' 解題思路: 用類似二分搜尋法，將1~x之間的數字都平方，看是否找到x或近似於x '''
         start = 1
         end = x
-        while start + 1 < end:
+        while start + 1 < end:  # 因為要找mid，所以是l+1<r
             mid = start + (end-start)//2
             num = mid*mid
-            if num == x:
+            if num == x:        # 如果平方完等於x，就可以直接return mid
                 return mid
             elif num < x:       # 平方後仍然小於target，所以可以把start變成mid，縮小搜尋範圍
                 start = mid
             elif num > x:       # 平方後大於target了，所以把end變成mid，縮小搜尋範圍
                 end = mid
         
-        ''' 如果上面都找不到，就有可能是end或start '''
+        ''' 
+        如果上面都找不到，就有可能是end或start，
+        看是start還是end的平方比x小，先看end，因為end肯定比start還大 
+        '''
         if end*end < x:
             return end
         else:

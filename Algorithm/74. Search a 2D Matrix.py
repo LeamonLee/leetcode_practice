@@ -30,7 +30,7 @@ class Solution:
         start = 0
         end = (ROWS * COLUMNS) - 1
 
-        while start + 1 < end:
+        while start + 1 < end:  # 因為要找mid，所以是l+1<r
             mid = start + (end-start)//2
 
             '''

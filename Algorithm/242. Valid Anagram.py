@@ -10,6 +10,8 @@ Output: true
 Example 2:
 Input: s = "rat", t = "car"
 Output: false
+
+可與383, 387比較
 '''
 
 class Solution:

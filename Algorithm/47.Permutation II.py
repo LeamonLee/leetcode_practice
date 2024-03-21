@@ -10,6 +10,8 @@ For example, [1,1,2] have the following unique permutations:
   [1,2,1],
   [2,1,1]
 ]
+
+比較46題
 '''
 from typing import List
 

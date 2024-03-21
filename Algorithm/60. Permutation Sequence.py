@@ -27,6 +27,9 @@ Output: "123"
 class Solution:
     def getPermutation(self, n: int, k: int) -> str:
         f, nums = [1], [0]      # 0的階層是1，把結果放入f。nums代表目前跑到階層幾了
+        '''
+        f=[1,1,2,6,24,120], nums=[0,1,2,3,4,5]
+        '''
         for i in range(1,n+1):
             f.append(i*f[i-1])  # Ex:3!=3*2!
             nums.append(i)

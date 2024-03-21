@@ -18,7 +18,9 @@ Explanation: 13 = 4 + 9.
 class Solution:
     def numSquares(self, n: int) -> int:
         '''
-        要用dp
+        要用dp，先初始化一個n+1長度的array，
+        接著從1遍歷到n
+        內層for loop只遍歷到當前外層i的值
         '''
         dp = [float("inf")] * (n+1)     # 一定要用float("inf")初始化
         dp[0] = 0

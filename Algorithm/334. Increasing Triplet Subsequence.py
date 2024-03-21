@@ -34,6 +34,9 @@ class Solution:
         
         # return maxDP >= 3
 
+        '''
+        記得初始化成float("inf")
+        '''
         minNum = float("inf")
         secMinNum = float("inf")
 

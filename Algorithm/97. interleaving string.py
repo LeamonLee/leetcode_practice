@@ -46,13 +46,13 @@ class Solution:
         dp[0][0] = True
         # Iterate through the first row (s2)
         for c in range(1, len2+1):  # 記得要用len2+1，且從1開始
-            # 如果前一個為True，且s3和s3的字符相同，則當前dp為True
+            # 如果前一個為True，且s2和s3的字符相同，則當前dp為True
             if dp[0][c-1] and s2[c-1] == s3[c-1]:
                 dp[0][c] = True
 
         # Iterate through the first column (s1)
         for r in range(1, len1+1):  # 記得要用len1+1，且從1開始
-            # 如果前一個為True，且s3和s3的字符相同，則當前dp為True
+            # 如果前一個為True，且s1和s3的字符相同，則當前dp為True
             if dp[r-1][0] and s1[r-1] == s3[r-1]:
                 dp[r][0] = True
 

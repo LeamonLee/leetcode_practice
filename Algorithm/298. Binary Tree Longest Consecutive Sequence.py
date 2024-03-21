@@ -63,5 +63,8 @@ class Solution:
                 helper(node.left, node.val+1, 1)
                 helper(node.right, node.val+1, 1)
 
+                # helper(node.left, node.left.val, 0)       (X)
+                # helper(node.right, node.right.val, 0)      (X)
+
         helper(root, root.val, 0)
         return res

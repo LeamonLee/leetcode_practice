@@ -34,6 +34,10 @@ class NumMatrix:
         self.dp=[[0 for _ in range(self.COLUMNS+1)] for _ in range(self.ROWS+1)]
         # self.dp=[[0 for _ in range(self.COLUMNS)] for _ in range(self.ROWS)]
 
+        '''
+        每個點的值等於
+        上面一列的值 + 左邊一欄的值 + 當前值 - 左上角重複計算過一次
+        '''
         for r in range(self.ROWS):
             for c in range(self.COLUMNS):
                 self.dp[r+1][c+1] = self.dp[r][c+1] + self.dp[r+1][c] + matrix[r][c] - self.dp[r][c] 
@@ -51,6 +55,7 @@ class NumMatrix:
         # print(f"self.dp:{self.dp}")
 
     def sumRegion(self, row1: int, col1: int, row2: int, col2: int) -> int:
+        ''' 因為self.dp[row1][col1]重複減了一次 '''
         return self.dp[row2+1][col2+1] - self.dp[row1][col2+1] - self.dp[row2+1][col1] + self.dp[row1][col1]
         # print(f"row1:{row1}, col1:{col1}, row2:{row2}, col2:{col2}")
         # if row2 - row1 == 0 and col2 - col1==0:

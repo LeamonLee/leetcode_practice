@@ -30,6 +30,6 @@ class Solution:
         res=0
 
         for i in range(len(columnTitle)):
-            res = res*26 + (ord(columnTitle[i]) - ord('A') + 1)
+            res = res*26 + (ord(columnTitle[i]) - ord('A') + 1) # 因為是從1(A)開始，所以要加1
         
         return res
